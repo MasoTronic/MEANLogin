@@ -1,0 +1,41 @@
+
+body{margin:0px; padding:0px;}
+@-webkit-keyframes backgroundScroll {
+from {background-position: 0 0;}
+to {background-position: -400px 0;}
+}
+ 
+@keyframes backgroundScroll {
+from {background-position: 0 0;}
+to {background-position: -400px 0;}
+}
+
+.register {
+    background:url('../../../assets/img/bridge.jpg');
+  
+    min-height: 10em;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    float: left;
+    padding: 100px 0;
+    width: 100%;
+    color:#fff !important;
+	-webkit-animation: backgroundScroll 33s linear infinite;
+animation: backgroundScroll 10s linear infinite;
+background-size:130% 100%;
+	background-position:top;
+	background-attachment:fixed;
+
+}
+
+.inputdiv{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    h1{
+        color: rebeccapurple;
+    }
+}
