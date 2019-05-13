@@ -35,7 +35,6 @@ res.send('here is what impiwe the chop gets back')
     });
 
     app.post('/login',(req,res) => {
-        // console.log(req.body.text['email'] + 'data received ' + req.body.text['password'])
      let user = new User(req.body)  
         User.findOne({
             'email': req.body['username']
