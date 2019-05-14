@@ -26,7 +26,7 @@ res.send('here is what impiwe the chop gets back')
            return user.generateAuthToken();
         }).then((token) => {
             console.log('returning')
-            res.header('x-auth', token).send(user);
+            res.send(user);
         }).catch((err) => {
             res.status(400).send("error happened " + err);
         });

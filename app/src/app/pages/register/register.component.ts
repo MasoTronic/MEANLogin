@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
   this.userForm = this.formBuilder.group({
     firstName: ['', [Validators.required]],
     lastName: ['',[Validators.required]],
-    email: ['', [Validators.required]],
+    email: ['', [Validators.email]],
     password: ['', [Validators.required]]
   });
 }
@@ -30,8 +30,9 @@ onSubmit(){
       "email":this.userForm.controls.email.value,
       "password": this.userForm.controls.password.value
       }).subscribe(res =>{
-        localStorage.setItem('user', JSON.stringify(res.data.data));
-      console.log(res.tokens[0].token)
+        console.log(res)
+        localStorage.setItem('user', JSON.stringify(res));
+      this.router.navigate(['/home']);
     })
   } else {
     alert('User form is not valid!!')

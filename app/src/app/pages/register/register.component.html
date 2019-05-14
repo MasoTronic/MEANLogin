@@ -13,8 +13,10 @@
         </div>
     </div>
   
-    <input type="email" formControlName="email" id="emailInputs" class="form-control mb-4" placeholder="E-mail">
-  
+    <input type="email" formControlName="email" id="emailInputs" class="form-control mb-4" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="E-mail">
+    <div *ngIf="submitted && userForm.controls.email.errors || !userForm.controls.email.valid" class="invalid-feedback">
+      <div *ngIf="userForm.controls.email.errors.required">must be in email format</div>
+  </div>
     <input type="password" formControlName="password" id="passwordInputs" class="form-control mb-4" placeholder="password">
   
     <button class="btn btn-info my-4 btn-block" type="submit">Sign in</button>
